@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
+import PlantImage from "../components/PlantImage";
 import '../style.css'
-
-const plantImages = {
-    "Arugula": "https://cpsc4910sq24.s3.amazonaws.com/images/arugula.jpg",
-    "Bell pepper": "https://cpsc4910sq24.s3.amazonaws.com/images/bell-pepper.jpg",
-    "Lettuce": "https://cpsc4910sq24.s3.amazonaws.com/images/butter-lettuce.jpg",
-    "Green leaf": "https://cpsc4910sq24.s3.amazonaws.com/images/green-leaf-lettuce.jpg",
-    "Strawberry": "https://cpsc4910sq24.s3.amazonaws.com/images/strawberry.jpg"
-  };
 
 export function Article({plant}) {
     const [plants, setPlants] = useState([]);
@@ -23,13 +17,15 @@ export function Article({plant}) {
         return <p>Loading plant data...</p>;
     }
 
-    const imageUrl = plantImages[plant.species];
-
     return (
         <>
           <article className="plant-card">
-            <img src={imageUrl} alt={plant.name} className="plant-image" />
-            <h1>{plant.name}</h1>
+            <PlantImage plant={plant}/>
+            <h1>
+              <Link to={'/plants'} state={{ plant }}>
+                {plant.name}
+              </Link>
+            </h1>
             <p>Species: {plant.species}</p>
             <p>Stage: {plant.stage}</p>
           </article>

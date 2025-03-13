@@ -14,7 +14,7 @@ export function ListingPage() {
     }, []);
 
     return (
-      <div>
+      <>
         <h1>Plant Palace</h1>
 
         <details>
@@ -37,10 +37,8 @@ export function ListingPage() {
             .filter((plant) => plant.location === "Front yard") 
             .map((plant) => <Article key={plant.id} plant={plant} />)}
         </details>
-        
 
-
-      </div>
+      </>
     );
 };
 
