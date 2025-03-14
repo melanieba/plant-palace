@@ -4,12 +4,11 @@ import ListingPage from "./pages/ListingPage";
 import DetailsPage from "./pages/DetailsPage";
 
 export function App() {
-  console.log("✅ App component is rendering!");
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<ListingPage />} />
-        <Route path="/plants" element={<DetailsPage />} />
+        <Route path="/plant/:id" element={<DetailsPage />} />
       </Routes>
     </BrowserRouter>
   );

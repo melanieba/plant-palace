@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Article from "../components/Article";
 
 export function ListingPage() {
-    console.log("ListingPage is rendering!");
-
     const [plants, setPlants] = useState([]);
 
     useEffect(() => {
@@ -21,21 +19,24 @@ export function ListingPage() {
           <summary>Greenhouse</summary>
           {plants
             .filter((plant) => plant.location === "Greenhouse") 
-            .map((plant) => <Article key={plant.id} plant={plant} />)}
+            .map((plant) => <Article key={plant.id} plant={plant} />)
+          }
         </details>
 
         <details>
           <summary>Living room hydroponics</summary>
           {plants
             .filter((plant) => plant.location === "Living room hydroponics") 
-            .map((plant) => <Article key={plant.id} plant={plant} />)}
+            .map((plant) => <Article key={plant.id} plant={plant} />)
+          }
         </details>
 
         <details>
           <summary>Front yard</summary>
           {plants
             .filter((plant) => plant.location === "Front yard") 
-            .map((plant) => <Article key={plant.id} plant={plant} />)}
+            .map((plant) => <Article key={plant.id} plant={plant} />)
+          }
         </details>
 
       </>

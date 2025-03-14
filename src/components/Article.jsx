@@ -4,25 +4,16 @@ import PlantImage from "../components/PlantImage";
 import '../style.css'
 
 export function Article({plant}) {
-    const [plants, setPlants] = useState([]);
-
-    useEffect(() => {
-        fetch("https://cpsc4910sq24.s3.amazonaws.com/data/plants.json") 
-          .then((response) => response.json())
-          .then((data) => setPlants(data))
-          .catch((error) => console.error("Error fetching plants:", error));
-      }, []);
-  
     if (!plant) {
         return <p>Loading plant data...</p>;
     }
 
     return (
         <>
-          <article className="plant-card">
+          <article className="article">
             <PlantImage plant={plant}/>
             <h1>
-              <Link to={'/plants'} state={{ plant }}>
+              <Link to={`/plant/${plant.id}`} state={{ plant }}>
                 {plant.name}
               </Link>
             </h1>
