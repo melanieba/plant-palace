@@ -13,9 +13,9 @@ export function ListingPage() {
 
     return (
       <>
-        <h1>Plant Palace</h1>
+        <h1 id="title">Plant Palace</h1>
 
-        <details>
+        <details open className="location-dropdown">
           <summary>Greenhouse</summary>
           {plants
             .filter((plant) => plant.location === "Greenhouse") 
@@ -23,7 +23,7 @@ export function ListingPage() {
           }
         </details>
 
-        <details>
+        <details open className="location-dropdown">
           <summary>Living room hydroponics</summary>
           {plants
             .filter((plant) => plant.location === "Living room hydroponics") 
@@ -31,7 +31,7 @@ export function ListingPage() {
           }
         </details>
 
-        <details>
+        <details open className="location-dropdown">
           <summary>Front yard</summary>
           {plants
             .filter((plant) => plant.location === "Front yard") 

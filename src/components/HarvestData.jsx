@@ -20,7 +20,7 @@ export function HarvestData({ plantId }) {
 
     return (
       <>
-        <table>
+        <table className="harvest-table">
           <thead>
             <tr>
             <th>Date</th>

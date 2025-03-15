@@ -8,12 +8,12 @@ const plantImages = {
     "Strawberry": "https://cpsc4910sq24.s3.amazonaws.com/images/strawberry.jpg"
 };
 
-export function PlantImage({plant}) {
+export function PlantImage({plant, target}) {
     const imageUrl = plantImages[plant.species];
 
     return (
       <>
-        <img src={imageUrl} alt={plant.name} className="plant-image" />
+        <img src={imageUrl} alt={plant.name} className={`plant-image-${ target }`} />
       </>
     );
 }

@@ -3,6 +3,7 @@ import { useLocation, useParams } from "react-router-dom";
 import NameHeader from '../components/NameHeader';
 import PlantImage from "../components/PlantImage";
 import HarvestData from "../components/HarvestData";
+import '../style.css'
 
 export function DetailsPage() {
     const { id } = useParams();
@@ -20,11 +21,22 @@ export function DetailsPage() {
     return (
         <>
           <NameHeader plant={ plant }/>
-          <PlantImage plant={ plant }/>
-          <p>Species: {plant.species}</p>
-          <p>Stage: {plant.stage}</p>
-          <h2>Harvests</h2>
-          {plant && plant.id && <HarvestData plantId={plant.id} />}
+          <div id="details-page"> 
+            <div id="left-details">
+              <PlantImage plant={ plant } target="details"/>
+              <p>
+                Species: {plant.species}
+                <br></br>
+                Stage: {plant.stage}
+                {plant.cultivar && <><br></br>
+                Cultivar: {plant.cultivar}</>}
+              </p>
+            </div>
+            <div id="right-details">
+              <h2>Harvests</h2>
+              {plant && plant.id && <HarvestData plantId={plant.id} />}
+            </div>
+          </div>
         </>
     );
 }

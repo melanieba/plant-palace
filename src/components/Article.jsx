@@ -10,15 +10,22 @@ export function Article({plant}) {
 
     return (
         <>
-          <article className="article">
-            <PlantImage plant={plant}/>
-            <h1>
-              <Link to={`/plant/${plant.id}`} state={{ plant }}>
-                {plant.name}
-              </Link>
-            </h1>
-            <p>Species: {plant.species}</p>
-            <p>Stage: {plant.stage}</p>
+          <article id="article">
+            <PlantImage plant={plant} target="list"/>
+            <div>
+              <h1 id="plant-name-article">
+                <Link to={`/plant/${plant.id}`} state={{ plant }}>
+                  {plant.name}
+                </Link>
+              </h1>
+              <p>
+                Species: {plant.species}
+                <br></br>
+                Stage: {plant.stage}
+                {plant.cultivar && <><br></br>
+                Cultivar: {plant.cultivar}</>}
+              </p>
+            </div>
           </article>
         </>
     );

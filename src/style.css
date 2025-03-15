@@ -1,9 +1,45 @@
-.plant-image {
-  width: 150px;
-  height: 150px;
+body {
+  color: #004526;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #CADDD8;
 }
 
-.article {
+a:visited {
+  color: #0a4a2d;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* listing page */
+#title {
+  font-size: 50px;
+  /* text-align: right;
+  margin-right: 50px; */
+  text-align: center;
+}
+
+.location-dropdown {
+  margin-bottom: 20px;
+}
+
+/* article */
+.plant-image-list {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+#plant-name-article {
+  font-size: 33px;
+  text-align: center;
+  margin-top: 0;
+}
+
+#article {
   display: inline-flex;
   gap: 30px;
   margin: 20px;
@@ -12,3 +48,60 @@
   border-radius: 5%;
 }
 
+/* details page */
+.plant-image-details {
+  width: 200px;
+  height: 200px;
+}
+
+#name-header {
+  font-size: 60px;
+  text-align: center;
+}
+
+#details-page {
+  display: inline-flex; 
+  flex-direction: row;
+  justify-content: center; 
+  width: 100%;
+}
+
+#left-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-right: 100px;
+  border-right: 2px solid;
+}
+
+#right-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-left: 100px;
+}
+
+.harvest-table tr:nth-child(odd) {
+  background-color: lightgray;
+}
+
+.harvest-table th {
+  background-color: white;
+}
+
+@media only screen and (max-width: 599px) {
+  #details-page {
+    flex-direction: column;
+  }
+
+  #left-details {
+  padding-right: 0px;
+  border-right: 0px solid;
+}
+
+#right-details {
+  padding-left: 0px;
+}
+}
